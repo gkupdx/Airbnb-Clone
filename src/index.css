@@ -1,13 +1,509 @@
-body {
+/* Manrope Regular 400 */
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+/* Manrope Medium 500 */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
+/* Manrope Semi-bold 600 */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  width: 100%;
+  height: auto;
+  font-family: 'Manrope', sans-serif;
+}
+
+/** MAIN CONTAINER **/
+.container {
+  width: 100vw;
+  height: auto;
+}
+
+/** INSPIRATION **/
+.inspiration {
+  width: 100%;
+  height: auto;
+  background: #FFF;
+  padding-left: 100px;
+}
+
+.inspiration h2 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.inspiration button:hover {
+  background: #f4f4f4;
+  cursor: pointer;
+}
+
+.inspirationWrapper {
+  display: flex;
+}
+
+.divider {
+  height: 10px;
+  width: 95%;
+  border-top: 1px solid lightgrey;
+}
+
+.artsBtn:focus,
+.outdoorBtn:focus,
+.cabinsBtn:focus,
+.beachBtn:focus,
+.popularBtn:focus,
+.uniqueBtn:focus {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+  cursor: default;
+}
+
+.artsBtn:active,
+.outdoorBtn:active,
+.cabinsBtn:active,
+.beachBtn:active,
+.popularBtn:active,
+.uniqueBtn:active {
+  transition: 0.2s;
+  transform: scale(0.98);
+}
+
+.artsBtn1 {
+  font-family: 'Manrope', sans-serif;
+  color: rgba(0, 0, 0, 1);
+  width: 195px;
+  height: 50px;
+  background: inherit;
+  border: none;
+  border-bottom: 2px solid #000;
+  margin-top: 5px;
+}
+.artsBtn2 {
+  font-family: 'Manrope', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  width: 195px;
+  height: 50px;
+  background: inherit;
+  border: none;
+  border-radius: 15px;
+  margin-top: 5px;
+}
+
+.outdoorBtn1 {
+  font-family: 'Manrope', sans-serif;
+  color: rgba(0, 0, 0, 1);
+  width: 235px;
+  height: 50px;
+  background: inherit;
+  border: none;
+  border-bottom: 2px solid #000;
+  margin-top: 5px;
+}
+.outdoorBtn2 {
+  font-family: 'Manrope', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  width: 235px;
+  height: 50px;
+  background: inherit;
+  border: none;
+  border-radius: 15px;
+  margin-top: 5px;
+}
+
+.cabinsBtn1 {
+  font-family: 'Manrope', sans-serif;
+  color: rgba(0, 0, 0, 1);
+  width: 120px;
+  height: 50px;
+  background: inherit;
+  border: none;
+  border-bottom: 2px solid #000;
+  margin-top: 5px;
+}
+.cabinsBtn2 {
+  font-family: 'Manrope', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  width: 120px;
+  height: 50px;
+  background: inherit;
+  border: none;
+  border-radius: 15px;
+  margin-top: 5px;
+}
+
+.beachBtn1 {
+  font-family: 'Manrope', sans-serif;
+  color: rgba(0, 0, 0, 1);
+  width: 135px;
+  height: 50px;
+  background: inherit;
+  border: none;
+  border-bottom: 2px solid #000;
+  margin-top: 5px;
+}
+.beachBtn2 {
+  font-family: 'Manrope', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  width: 135px;
+  height: 50px;
+  background: inherit;
+  border: none;
+  border-radius: 15px;
+  margin-top: 5px;
+}
+
+.popularBtn1 {
+  font-family: 'Manrope', sans-serif;
+  color: rgba(0, 0, 0, 1);
+  width: 140px;
+  height: 50px;
+  background: inherit;
+  border: none;
+  border-bottom: 2px solid #000;
+  margin-top: 5px;
+}
+.popularBtn2 {
+  font-family: 'Manrope', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  width: 140px;
+  height: 50px;
+  background: inherit;
+  border: none;
+  border-radius: 15px;
+  margin-top: 5px;
+}
+
+.uniqueBtn1 {
+  font-family: 'Manrope', sans-serif;
+  color: rgba(0, 0, 0, 1);
+  width: 95px;
+  height: 50px;
+  background: inherit;
+  border: none;
+  border-bottom: 2px solid #000;
+  margin-top: 5px;
+}
+.uniqueBtn2 {
+  font-family: 'Manrope', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  width: 95px;
+  height: 50px;
+  background: inherit;
+  border: none;
+  border-radius: 15px;
+  margin-top: 5px;
+}
+
+/** ArtLocation **/
+.artLocation {
+  width: 100%;
+  height: auto;
+  background: inherit;
+  margin-bottom: 50px;
+}
+
+.artWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  background: inherit;
+  width: 80%;
+}
+
+.artWrapper button {
+  font-family: 'Manrope', sans-serif;
+  border: none;
+  background: inherit;
+  text-align: left;
+  height: 70px;
+}
+
+.artWrapper button:hover {
+  background: #FFF;
+}
+
+/** OutdoorLocation **/
+.outdoorLocation {
+  width: 100%;
+  height: auto;
+  background: inherit;
+  margin-bottom: 50px;
+}
+
+.outdoorWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  background: inherit;
+  width: 80%;
+}
+
+.outdoorWrapper button {
+  font-family: 'Manrope', sans-serif;
+  border: none;
+  background: inherit;
+  text-align: left;
+  height: 70px;
+}
+
+.outdoorWrapper button:hover {
+  background: #FFF;
+}
+
+/** CabinsLocation **/
+.cabinsLocation {
+  width: 100%;
+  height: auto;
+  background: inherit;
+  margin-bottom: 50px;
+}
+
+.cabinsWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  background: inherit;
+  width: 80%;
+}
+
+.cabinsWrapper button {
+  font-family: 'Manrope', sans-serif;
+  border: none;
+  background: inherit;
+  text-align: left;
+  height: 70px;
+}
+
+.cabinsWrapper button:hover {
+  background: #FFF;
+}
+
+/** BeachLocation **/
+.beachLocation {
+  width: 100%;
+  height: auto;
+  background: inherit;
+  margin-bottom: 50px;
+}
+
+.beachWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  background: inherit;
+  width: 80%;
+}
+
+.beachWrapper button {
+  font-family: 'Manrope', sans-serif;
+  border: none;
+  background: inherit;
+  text-align: left;
+  height: 70px;
+}
+
+.beachWrapper button:hover {
+  background: #FFF;
+}
+
+/** PopularLocation **/
+.popularLocation {
+  width: 100%;
+  height: auto;
+  background: inherit;
+  margin-bottom: 50px;
+}
+
+.popularWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  background: inherit;
+  width: 80%;
+}
+
+.popularWrapper button {
+  font-family: 'Manrope', sans-serif;
+  border: none;
+  background: inherit;
+  text-align: left;
+  height: 70px;
+}
+
+.popularWrapper button:hover {
+  background: #FFF;
+}
+
+/** UniqueLocation **/
+.uniqueLocation {
+  width: 100%;
+  height: auto;
+  background: inherit;
+  margin-bottom: 50px;
+}
+
+.uniqueWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  background: inherit;
+  width: 80%;
+}
+
+.uniqueWrapper button {
+  font-family: 'Manrope', sans-serif;
+  border: none;
+  background: inherit;
+  text-align: left;
+  height: 70px;
+}
+
+.uniqueWrapper button:hover {
+  background: #FFF;
+}
+
+/** Inspiration location columns **/
+.columnOne {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.columnTwo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.columnThree {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.columnFour {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+/** FOOTER **/
+.footer {
+  width: 100%;
+  height: 600px;
+  background: #f4f4f4;
+}
+
+.footerWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-content: space-between;
+  background: inherit;
+  width: 80%;
+  height: 500px;
+}
+
+.footer h2 {
+  font-size: 12px;
+  margin-top: 40px;
+}
+
+.footer a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer p {
+  color: #333;
+  font-size: 14px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-around;
+  height: 450px;
+}
+
+.community {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-around;
+  height: 340px;
+}
+
+.host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-around;
+  height: 265px;
+}
+
+.support {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  height: 230px;
+}
+
+/* COPYRIGHT SECTION of FOOTER */
+.copyrightWrapper {
+  display: flex;
+  justify-content: space-between;
+  background: inherit;
+  width: 90%;
+  border-top: 1px solid lightgrey;
+  margin: auto;
+}
+
+.copyright p {
+  margin-top: 20px;
+}
+
+.copyright a {
+  margin: 5px;
+}
+
+.social {
+  display: flex;
+}
+
+.social button {
+  font-family: 'Manrope', sans-serif;
+  text-decoration: underline;
+  width: 100px;
+  height: 50px;
+  background: #f4f4f4;
+  border: none;
+  margin-top: 5px;
+}
+
+.social button:hover {
+  cursor: pointer;
+}
+
+.social i {
+  margin-right: 7px;
+}
+
+.social a {
+  width: 50px;
+  margin-top: 20px;
 }
