@@ -4,6 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
 /* Manrope Semi-bold 600 */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap');
+/* Manrope Extra-bold 800 */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 
 * {
   box-sizing: border-box;
@@ -23,6 +25,148 @@ body {
   height: auto;
 }
 
+/** LIVE ANYWHERE **/
+.liveAnywhere {
+  width: 100%;
+  height: auto;
+  padding-left: 100px;
+  margin-bottom: 50px;
+}
+
+.liveAnywhere h2 {
+  font-size: 31px;
+  font-weight: 800;
+}
+
+.liveAnywhereWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 25px;
+}
+
+.liveAnywhereWrapper img:hover,
+.liveAnywhereWrapper h3:hover {
+  cursor: pointer;
+}
+
+.liveAnywhereWrapper img {
+  width: 96%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.liveAnywhereWrapper h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/** TRY HOSTING **/
+.hosting {
+  width: 100%;
+  height: auto;
+  padding-left: 100px;
+  margin-bottom: 50px;
+}
+
+.hostingWrapper {
+  width: 80%;
+  height: auto;
+}
+
+.hostingWrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.hostingWrapper img:hover {
+  cursor: pointer;
+}
+
+.bannerContent {
+  position: absolute;
+  margin-top: 180px;
+  margin-left: 100px;
+  width: 300px;
+  color: #FFF;
+}
+
+.bannerContent:hover {
+  cursor: pointer;
+}
+
+.bannerContent h2 {
+  font-size: 40px;
+  font-weight: 500px;
+}
+
+.bannerContent p {
+  font-size: 17px;
+  margin-top: 5px;
+}
+
+.bannerContent button {
+  width: 120px;
+  height: 40px;
+  background: #FFF;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: 35px;
+}
+
+.bannerContent button:hover {
+  cursor: pointer;
+}
+
+/** DISCOVER **/
+.discover {
+  width: 100%;
+  height: auto;
+  background: #FFF;
+  padding-left: 100px;
+  margin-bottom: 50px;
+}
+
+.discover h2 {
+  font-size: 31px;
+  font-weight: 800;
+}
+
+.discoverWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  height: auto;
+  margin-top: 25px;
+}
+
+.discoverWrapper h3 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-top: 2px;
+}
+
+.discoverWrapper p {
+  font-size: 14px;
+  padding-top: 2px;
+}
+
+.discoverWrapper img {
+  width: 98%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.discoverWrapper h3:hover,
+.discoverWrapper p:hover,
+.discoverWrapper img:hover {
+  cursor: pointer;
+}
+
 /** INSPIRATION **/
 .inspiration {
   width: 100%;
@@ -36,11 +180,6 @@ body {
   margin-top: 20px;
 }
 
-.inspiration button:hover {
-  background: #f4f4f4;
-  cursor: pointer;
-}
-
 .inspirationWrapper {
   display: flex;
 }
@@ -51,29 +190,49 @@ body {
   border-top: 1px solid lightgrey;
 }
 
-.artsBtn:focus,
-.outdoorBtn:focus,
-.cabinsBtn:focus,
-.beachBtn:focus,
-.popularBtn:focus,
-.uniqueBtn:focus {
-  font-weight: 500;
-  color: rgba(0, 0, 0, 1);
+.artsBtn1:hover,
+.outdoorBtn1:hover,
+.cabinsBtn1:hover,
+.beachBtn1:hover,
+.popularBtn1:hover,
+.uniqueBtn1:hover {
+  background: #f4f4f4;
   cursor: default;
 }
 
-.artsBtn:active,
-.outdoorBtn:active,
-.cabinsBtn:active,
-.beachBtn:active,
-.popularBtn:active,
-.uniqueBtn:active {
-  transition: 0.2s;
-  transform: scale(0.98);
+.artsBtn2:hover,
+.outdoorBtn2:hover,
+.cabinsBtn2:hover,
+.beachBtn2:hover,
+.popularBtn2:hover,
+.uniqueBtn2:hover {
+  background: #f4f4f4;
+  cursor: pointer;
+}
+
+.artsBtn2:focus,
+.outdoorBtn2:focus,
+.cabinsBtn2:focus,
+.beachBtn2:focus,
+.popularBtn2:focus,
+.uniqueBtn2:focus {
+  cursor: default;
+}
+
+.artsBtn2:active,
+.outdoorBtn2:active,
+.cabinsBtn2:active,
+.beachBtn2:active,
+.popularBtn2:active,
+.uniqueBtn2:active {
+  transition-duration: 0.1s;
+  transform: scale(0.95);
+  cursor: pointer;
 }
 
 .artsBtn1 {
   font-family: 'Manrope', sans-serif;
+  font-weight: 600;
   color: rgba(0, 0, 0, 1);
   width: 195px;
   height: 50px;
@@ -81,6 +240,8 @@ body {
   border: none;
   border-bottom: 2px solid #000;
   margin-top: 5px;
+  transition-duration: 0.1s;
+  transform: scale(0.99);
 }
 .artsBtn2 {
   font-family: 'Manrope', sans-serif;
@@ -95,6 +256,7 @@ body {
 
 .outdoorBtn1 {
   font-family: 'Manrope', sans-serif;
+  font-weight: 600;
   color: rgba(0, 0, 0, 1);
   width: 235px;
   height: 50px;
@@ -102,6 +264,8 @@ body {
   border: none;
   border-bottom: 2px solid #000;
   margin-top: 5px;
+  transition-duration: 0.1s;
+  transform: scale(0.99);
 }
 .outdoorBtn2 {
   font-family: 'Manrope', sans-serif;
@@ -116,6 +280,7 @@ body {
 
 .cabinsBtn1 {
   font-family: 'Manrope', sans-serif;
+  font-weight: 600;
   color: rgba(0, 0, 0, 1);
   width: 120px;
   height: 50px;
@@ -123,6 +288,8 @@ body {
   border: none;
   border-bottom: 2px solid #000;
   margin-top: 5px;
+  transition-duration: 0.1s;
+  transform: scale(0.99);
 }
 .cabinsBtn2 {
   font-family: 'Manrope', sans-serif;
@@ -137,6 +304,7 @@ body {
 
 .beachBtn1 {
   font-family: 'Manrope', sans-serif;
+  font-weight: 600;
   color: rgba(0, 0, 0, 1);
   width: 135px;
   height: 50px;
@@ -144,6 +312,8 @@ body {
   border: none;
   border-bottom: 2px solid #000;
   margin-top: 5px;
+  transition-duration: 0.1s;
+  transform: scale(0.99);
 }
 .beachBtn2 {
   font-family: 'Manrope', sans-serif;
@@ -158,6 +328,7 @@ body {
 
 .popularBtn1 {
   font-family: 'Manrope', sans-serif;
+  font-weight: 600;
   color: rgba(0, 0, 0, 1);
   width: 140px;
   height: 50px;
@@ -165,6 +336,8 @@ body {
   border: none;
   border-bottom: 2px solid #000;
   margin-top: 5px;
+  transition-duration: 0.1s;
+  transform: scale(0.99);
 }
 .popularBtn2 {
   font-family: 'Manrope', sans-serif;
@@ -179,6 +352,7 @@ body {
 
 .uniqueBtn1 {
   font-family: 'Manrope', sans-serif;
+  font-weight: 600;
   color: rgba(0, 0, 0, 1);
   width: 95px;
   height: 50px;
@@ -186,6 +360,8 @@ body {
   border: none;
   border-bottom: 2px solid #000;
   margin-top: 5px;
+  transition-duration: 0.1s;
+  transform: scale(0.99);
 }
 .uniqueBtn2 {
   font-family: 'Manrope', sans-serif;
@@ -224,6 +400,7 @@ body {
 
 .artWrapper button:hover {
   background: #FFF;
+  cursor: pointer;
 }
 
 /** OutdoorLocation **/
@@ -252,6 +429,7 @@ body {
 
 .outdoorWrapper button:hover {
   background: #FFF;
+  cursor: pointer;
 }
 
 /** CabinsLocation **/
@@ -280,6 +458,7 @@ body {
 
 .cabinsWrapper button:hover {
   background: #FFF;
+  cursor: pointer;
 }
 
 /** BeachLocation **/
@@ -308,6 +487,7 @@ body {
 
 .beachWrapper button:hover {
   background: #FFF;
+  cursor: pointer;
 }
 
 /** PopularLocation **/
@@ -336,6 +516,7 @@ body {
 
 .popularWrapper button:hover {
   background: #FFF;
+  cursor: pointer;
 }
 
 /** UniqueLocation **/
@@ -364,6 +545,7 @@ body {
 
 .uniqueWrapper button:hover {
   background: #FFF;
+  cursor: pointer;
 }
 
 /** Inspiration location columns **/
@@ -398,7 +580,7 @@ body {
 /** FOOTER **/
 .footer {
   width: 100%;
-  height: 600px;
+  height: 555px;
   background: #f4f4f4;
 }
 
@@ -493,6 +675,7 @@ body {
   background: #f4f4f4;
   border: none;
   margin-top: 5px;
+  margin-right: 5px;
 }
 
 .social button:hover {
@@ -504,6 +687,8 @@ body {
 }
 
 .social a {
-  width: 50px;
+  width: 20px;
   margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
