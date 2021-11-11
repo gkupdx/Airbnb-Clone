@@ -21,104 +21,277 @@ body {
 
 /** MAIN CONTAINER **/
 .container {
-  width: 100vw;
-  height: auto;
-}
-
-/** LIVE ANYWHERE **/
-.liveAnywhere {
   width: 100%;
   height: auto;
-  padding-left: 100px;
-  margin-bottom: 50px;
 }
 
-.liveAnywhere h2 {
-  font-size: 31px;
-  font-weight: 800;
+/** HEADER **/
+.header {
+  width: 100%;
+  height: 1450px;
+  background: #000;
+  margin-bottom: 30px;
 }
 
-.liveAnywhereWrapper {
+.headerWrapper {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 85%;
+  height: auto;
+  margin: auto;
+}
+
+.logoWrap {
+  display: flex;
+  align-items: flex-start;
+  width: 20%;
+  height: auto;
   margin-top: 25px;
 }
 
-.liveAnywhereWrapper img:hover,
-.liveAnywhereWrapper h3:hover {
+.logoWrap img {
+  width: 35%;
+  height: auto;
+}
+
+.logoWrap img:hover {
   cursor: pointer;
 }
 
-.liveAnywhereWrapper img {
-  width: 96%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.liveAnywhereWrapper h3 {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-/** TRY HOSTING **/
-.hosting {
-  width: 100%;
-  height: auto;
-  padding-left: 100px;
-  margin-bottom: 50px;
-}
-
-.hostingWrapper {
-  width: 80%;
-  height: auto;
-}
-
-.hostingWrapper img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-}
-
-.hostingWrapper img:hover {
-  cursor: pointer;
-}
-
-.bannerContent {
-  position: absolute;
-  margin-top: 180px;
-  margin-left: 100px;
-  width: 300px;
+.searchWrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   color: #FFF;
+  width: 30%;
+  margin-top: 25px;
 }
 
-.bannerContent:hover {
+.searchWrap p {
+  height: 30px;
+  margin-right: -50px;
+}
+
+.searchWrap a {
+  height: 30px;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.searchWrap p:hover,
+.searchWrap a:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  border-bottom: 1px solid lightgrey;
+}
+
+.accountWrap {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #FFF;
+  width: 15%;
+  margin-top: 25px;
+}
+
+.hostBtn {
+  font-size: 14px;
+  font-weight: 600;
+  width: 130px;
+  padding: 12px;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.globeBtn {
+  font-size: 14px;
+  width: 40px;
+  padding: 10px;
+  text-align: center;
+  margin-left: -10px;
+  margin-right: 5px;
+}
+
+.hostBtn:hover,
+.globeBtn:hover {
+  background: rgba(221, 231, 238, 0.15);
+  border-radius: 30px;
   cursor: pointer;
 }
 
-.bannerContent h2 {
-  font-size: 40px;
-  font-weight: 500px;
-}
-
-.bannerContent p {
-  font-size: 17px;
-  margin-top: 5px;
-}
-
-.bannerContent button {
-  width: 120px;
+.accountBtn {
+  width: 80px;
   height: 40px;
   background: #FFF;
   border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.8);
-  margin-top: 35px;
+  border-radius: 30px;
 }
 
-.bannerContent button:hover {
+.accountBtn i {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 17px;
+  color: grey;
+}
+
+.accountBtn:hover {
+  cursor: pointer;
+}
+
+/** EXPLORE NEARBY **/
+.nextTrip {
+  width: 100%;
+  height: auto;
+  margin-top: 500px;
+  margin-bottom: 50px;
+}
+
+.nextTrip h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+  padding-left: 140px;
+  margin-bottom: 40px;
+}
+
+.nextTripWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  height: auto;
+  margin: auto;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  width: 385px;
+  height: 550px;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.icon img {
+  width: 100%;
+  height: 250px;
+  object-fit: fill;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.portlandHours h3,
+.seattleHours h3,
+.bendHours h3,
+.eugeneHours h3 {
+  font-size: 35px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.portlandHours p,
+.seattleHours p,
+.bendHours p,
+.eugeneHours p {
+  font-size: 19px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.portlandHours {
+  width: 100%;
+  height: 250px;
+  background: rgb(180, 30, 100);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: left;
+}
+
+.seattleHours {
+  width: 100%;
+  height: 250px;
+  background: #e32750;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.bendHours {
+  width: 100%;
+  height: 250px;
+  background: #e03c31;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.eugeneHours {
+  width: 100%;
+  height: 250px;
+  background: #ce2c41;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/** LIVE ANYWHERE **/
+.giftCards {
+  width: 100%;
+  height: auto;
+  margin-bottom: 85px;
+}
+
+.giftCardsWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin: auto;
+}
+
+.giftCardsWrapper img {
+  width: 100%;
+  height: 780px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+.giftCardContent {
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 130px;
+  width: 450px;
+  text-align: center;
+}
+
+.giftCardContent p {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+}
+
+.giftCardContent h2 {
+  font-size: 90px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.giftCardContent button {
+  background: rgba(3, 3, 3, 0.85);
+  color: #FFF;
+  border: none;
+  border-radius: 7px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  width: 120px;
+  height: 50px;
+  margin-top: 15px;
+}
+
+.giftCardContent button:hover {
+  background: #000;
   cursor: pointer;
 }
 
@@ -127,43 +300,134 @@ body {
   width: 100%;
   height: auto;
   background: #FFF;
-  padding-left: 100px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
-.discover h2 {
-  font-size: 31px;
-  font-weight: 800;
+.discover h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+  margin-left: 140px;
+  margin-bottom: 50px;
 }
 
 .discoverWrapper {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 85%;
   height: auto;
-  margin-top: 25px;
+  margin: auto;
 }
 
-.discoverWrapper h3 {
-  font-size: 18px;
-  font-weight: 600;
-  padding-top: 2px;
+.experiences {
+  width: 49%;
+  height: auto;
 }
 
-.discoverWrapper p {
-  font-size: 14px;
-  padding-top: 2px;
+.onlineExperiences {
+  width: 49%;
+  height: auto;
 }
 
-.discoverWrapper img {
-  width: 98%;
+.experiences img,
+.onlineExperiences img {
+  width: 100%;
   height: auto;
   border-radius: 10px;
 }
 
-.discoverWrapper h3:hover,
-.discoverWrapper p:hover,
-.discoverWrapper img:hover {
+.experiencesContent,
+.onlineExperiencesContent  {
+  position: absolute;
+  margin-top: 70px;
+  margin-left: 100px;
+  width: 350px;
+}
+
+.experiencesContent h3,
+.onlineExperiencesContent h3 {
+  font-size: 50px;
+  font-weight: 800;
+  color: #FFF;
+}
+
+.experiencesContent button {
+  width: 150px;
+  height: 50px;
+  background: #FFF;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 7px;
+  margin-top: 20px;
+}
+
+.onlineExperiencesContent button {
+  width: 200px;
+  height: 50px;
+  background: #FFF;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 7px;
+  margin-top: 20px;
+}
+
+.experiencesContent button:hover,
+.onlineExperiencesContent button:hover {
+  background: #dcdcdc;
+  cursor: pointer;
+}
+
+/** TRY HOSTING **/
+.hosting {
+  width: 100%;
+  height: auto;
+  margin-bottom: 140px;
+}
+
+.hostingWrapper {
+  width: 85%;
+  height: auto;
+  margin: auto;
+}
+
+.hostingWrapper img {
+  width: 100%;
+  height: 810px;
+  border-radius: 15px;
+}
+
+.bannerContent {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 100px;
+  width: 250px;
+  color: #FFF;
+}
+
+.bannerContent h2 {
+  font-size: 80px;
+  font-weight: 500px;
+  line-height: 0.98;
+}
+
+.bannerContent button {
+  width: 150px;
+  height: 45px;
+  background: #FFF;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: 250px;
+}
+
+.bannerContent button:hover {
+  background: #dcdcdc;
   cursor: pointer;
 }
 
@@ -172,22 +436,30 @@ body {
   width: 100%;
   height: auto;
   background: #FFF;
-  padding-left: 100px;
 }
 
 .inspiration h2 {
-  font-size: 20px;
-  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+  margin-left: 140px;
 }
 
 .inspirationWrapper {
   display: flex;
+  width: 85%;
+  margin: auto;
+}
+
+.inspirationWrapper button {
+  margin-right: 20px;
 }
 
 .divider {
   height: 10px;
-  width: 95%;
+  width: 85%;
   border-top: 1px solid lightgrey;
+  margin: auto;
 }
 
 .artsBtn1:hover,
@@ -226,13 +498,14 @@ body {
 .popularBtn2:active,
 .uniqueBtn2:active {
   transition-duration: 0.1s;
-  transform: scale(0.95);
+  transform: scale(0.97);
   cursor: pointer;
 }
 
 .artsBtn1 {
   font-family: 'Manrope', sans-serif;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: rgba(0, 0, 0, 1);
   width: 195px;
   height: 50px;
@@ -245,7 +518,8 @@ body {
 }
 .artsBtn2 {
   font-family: 'Manrope', sans-serif;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
   width: 195px;
   height: 50px;
   background: inherit;
@@ -256,9 +530,10 @@ body {
 
 .outdoorBtn1 {
   font-family: 'Manrope', sans-serif;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: rgba(0, 0, 0, 1);
-  width: 235px;
+  width: 240px;
   height: 50px;
   background: inherit;
   border: none;
@@ -269,8 +544,9 @@ body {
 }
 .outdoorBtn2 {
   font-family: 'Manrope', sans-serif;
-  color: rgba(0, 0, 0, 0.8);
-  width: 235px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
+  width: 240px;
   height: 50px;
   background: inherit;
   border: none;
@@ -280,7 +556,8 @@ body {
 
 .cabinsBtn1 {
   font-family: 'Manrope', sans-serif;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: rgba(0, 0, 0, 1);
   width: 120px;
   height: 50px;
@@ -293,7 +570,8 @@ body {
 }
 .cabinsBtn2 {
   font-family: 'Manrope', sans-serif;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
   width: 120px;
   height: 50px;
   background: inherit;
@@ -304,7 +582,8 @@ body {
 
 .beachBtn1 {
   font-family: 'Manrope', sans-serif;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: rgba(0, 0, 0, 1);
   width: 135px;
   height: 50px;
@@ -317,7 +596,8 @@ body {
 }
 .beachBtn2 {
   font-family: 'Manrope', sans-serif;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
   width: 135px;
   height: 50px;
   background: inherit;
@@ -328,7 +608,8 @@ body {
 
 .popularBtn1 {
   font-family: 'Manrope', sans-serif;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: rgba(0, 0, 0, 1);
   width: 140px;
   height: 50px;
@@ -341,7 +622,8 @@ body {
 }
 .popularBtn2 {
   font-family: 'Manrope', sans-serif;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
   width: 140px;
   height: 50px;
   background: inherit;
@@ -352,7 +634,8 @@ body {
 
 .uniqueBtn1 {
   font-family: 'Manrope', sans-serif;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: rgba(0, 0, 0, 1);
   width: 95px;
   height: 50px;
@@ -365,7 +648,8 @@ body {
 }
 .uniqueBtn2 {
   font-family: 'Manrope', sans-serif;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
   width: 95px;
   height: 50px;
   background: inherit;
@@ -379,7 +663,7 @@ body {
   width: 100%;
   height: auto;
   background: inherit;
-  margin-bottom: 50px;
+  margin-bottom: 65px;
 }
 
 .artWrapper {
@@ -387,7 +671,8 @@ body {
   justify-content: space-between;
   align-content: space-between;
   background: inherit;
-  width: 80%;
+  width: 85%;
+  margin: auto;
 }
 
 .artWrapper button {
@@ -408,7 +693,7 @@ body {
   width: 100%;
   height: auto;
   background: inherit;
-  margin-bottom: 50px;
+  margin-bottom: 65px;
 }
 
 .outdoorWrapper {
@@ -416,7 +701,8 @@ body {
   justify-content: space-between;
   align-content: space-between;
   background: inherit;
-  width: 80%;
+  width: 85%;
+  margin: auto;
 }
 
 .outdoorWrapper button {
@@ -437,7 +723,7 @@ body {
   width: 100%;
   height: auto;
   background: inherit;
-  margin-bottom: 50px;
+  margin-bottom: 65px;
 }
 
 .cabinsWrapper {
@@ -445,7 +731,8 @@ body {
   justify-content: space-between;
   align-content: space-between;
   background: inherit;
-  width: 80%;
+  width: 85%;
+  margin: auto;
 }
 
 .cabinsWrapper button {
@@ -466,7 +753,7 @@ body {
   width: 100%;
   height: auto;
   background: inherit;
-  margin-bottom: 50px;
+  margin-bottom: 65px;
 }
 
 .beachWrapper {
@@ -474,7 +761,8 @@ body {
   justify-content: space-between;
   align-content: space-between;
   background: inherit;
-  width: 80%;
+  width: 85%;
+  margin: auto;
 }
 
 .beachWrapper button {
@@ -495,7 +783,7 @@ body {
   width: 100%;
   height: auto;
   background: inherit;
-  margin-bottom: 50px;
+  margin-bottom: 65px;
 }
 
 .popularWrapper {
@@ -503,7 +791,8 @@ body {
   justify-content: space-between;
   align-content: space-between;
   background: inherit;
-  width: 80%;
+  width: 85%;
+  margin: auto;
 }
 
 .popularWrapper button {
@@ -524,7 +813,7 @@ body {
   width: 100%;
   height: auto;
   background: inherit;
-  margin-bottom: 50px;
+  margin-bottom: 65px;
 }
 
 .uniqueWrapper {
@@ -532,7 +821,8 @@ body {
   justify-content: space-between;
   align-content: space-between;
   background: inherit;
-  width: 80%;
+  width: 85%;
+  margin: auto;
 }
 
 .uniqueWrapper button {
@@ -552,29 +842,25 @@ body {
 .columnOne {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-content: space-around;
+  width: 25%;
 }
 
 .columnTwo {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-content: space-around;
+  width: 25%;
 }
 
 .columnThree {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-content: space-around;
+  width: 25%;
 }
 
 .columnFour {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-content: space-around;
+  width: 25%;
 }
 
 /** FOOTER **/
@@ -586,15 +872,15 @@ body {
 
 .footerWrapper {
   display: flex;
-  justify-content: space-around;
-  align-content: space-between;
+  justify-content: space-between;
   background: inherit;
-  width: 80%;
+  width: 85%;
   height: 500px;
+  margin: auto;
 }
 
 .footer h2 {
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 40px;
 }
 
@@ -616,24 +902,27 @@ body {
 .about {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-content: space-around;
-  height: 450px;
+  justify-content: space-between;
+  row-gap: 18px;
+  width: 25%;
+  height: 420px;
 }
 
 .community {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-content: space-around;
-  height: 340px;
+  row-gap: 18px;
+  width: 25%;
+  height: 320px;
 }
 
 .host {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-content: space-around;
+  row-gap: 18px;
+  width: 25%;
   height: 265px;
 }
 
@@ -641,16 +930,17 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-content: space-between;
+  row-gap: 18px;
+  width: 25%;
   height: 230px;
 }
 
-/* COPYRIGHT SECTION of FOOTER */
+/* COPYRIGHT SECTION */
 .copyrightWrapper {
   display: flex;
   justify-content: space-between;
   background: inherit;
-  width: 90%;
+  width: 85%;
   border-top: 1px solid lightgrey;
   margin: auto;
 }
@@ -663,19 +953,16 @@ body {
   margin: 5px;
 }
 
-.social {
-  display: flex;
-}
-
+/* SOCIAL */
 .social button {
   font-family: 'Manrope', sans-serif;
+  font-weight: 600;
   text-decoration: underline;
-  width: 100px;
+  width: 110px;
   height: 50px;
   background: #f4f4f4;
   border: none;
   margin-top: 5px;
-  margin-right: 5px;
 }
 
 .social button:hover {
@@ -687,8 +974,8 @@ body {
 }
 
 .social a {
+  font-size: 18px;
   width: 20px;
   margin-top: 20px;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
