@@ -17,6 +17,8 @@ const Inspiration = () => {
   const [popular, setPopular] = useState(false);
   const [unique, setUnique] = useState(false);
 
+  // Displays correct corresponding content when
+  // 'Destination for arts & culture' button is clicked
   const displayArt = () => {
     if (!art) {
       setArt(!art);
@@ -30,6 +32,8 @@ const Inspiration = () => {
     }
   }
 
+  // Displays correct corresponding content when
+  // 'Destination for outdoor adventure' button is clicked
   const displayOutdoor = () => {
     if (!outdoor) {
       setOutdoor(!outdoor);
@@ -43,6 +47,8 @@ const Inspiration = () => {
     }
   }
 
+  // Displays correct corresponding content when
+  // 'Mountain Cabins' button is clicked
   const displayCabins = () => {
     if (!cabins) {
       setCabins(!cabins);
@@ -56,6 +62,8 @@ const Inspiration = () => {
     }
   }
 
+  // Displays correct corresponding content when
+  // 'Beach destinations' button is clicked
   const displayBeach = () => {
     if (!beach) {
       setBeach(!beach);
@@ -69,6 +77,8 @@ const Inspiration = () => {
     }
   }
 
+  // Displays correct corresponding content when
+  // 'Popular destinations' button is clicked
   const displayPopular = () => {
     if (!popular) {
       setPopular(!popular);
@@ -82,6 +92,8 @@ const Inspiration = () => {
     }
   }
 
+  // Displays correct corresponding content when
+  // 'Unique Stays' button is clicked
   const displayUnique = () => {
     if (!unique) {
       setUnique(!unique);
@@ -99,12 +111,30 @@ const Inspiration = () => {
     <div className="inspiration">
       <h2>Inspiration for future getaways</h2>
       <div className="inspirationWrapper">
-        <button onClick={displayArt} className={art ? "artsBtn1" : "artsBtn2"}>Destination for arts & culture</button>
-        <button onClick={displayOutdoor} className={outdoor ? "outdoorBtn1" : "outdoorBtn2"}>Destinations for outdoor adventure</button>
-        <button onClick={displayCabins} className={cabins ? "cabinsBtn1" : "cabinsBtn2"}>Mountain cabins</button>
-        <button onClick={displayBeach} className={beach ? "beachBtn1" : "beachBtn2"}>Beach destinations</button>
-        <button onClick={displayPopular} className={popular ? "popularBtn1" : "popularBtn2"}>Popular destinations</button>
-        <button onClick={displayUnique} className={unique ? "uniqueBtn1" : "uniqueBtn2"}>Unique Stays</button>
+        <div className="artsBtnWrapper">
+          <button onClick={displayArt} className={art ? "artsBtn1" : "artsBtn2"}>Destination for arts & culture</button>
+          <div className={art ? "artsBorderBottom" : ''}></div>
+        </div>
+        <div className="outdoorBtnWrapper">
+          <button onClick={displayOutdoor} className={outdoor ? "outdoorBtn1" : "outdoorBtn2"}>Destinations for outdoor adventure</button>
+          <div className={outdoor ? "outdoorBorderBottom" : ''}></div>
+        </div>
+        <div className="cabinsBtnWrapper">
+          <button onClick={displayCabins} className={cabins ? "cabinsBtn1" : "cabinsBtn2"}>Mountain cabins</button>
+          <div className={cabins ? "cabinsBorderBottom" : ''}></div>
+        </div>
+        <div className="beachBtnWrapper">
+          <button onClick={displayBeach} className={beach ? "beachBtn1" : "beachBtn2"}>Beach destinations</button>
+          <div className={beach ? "beachBorderBottom" : ''}></div>
+        </div>
+        <div className="popularBtnWrapper">
+          <button onClick={displayPopular} className={popular ? "popularBtn1" : "popularBtn2"}>Popular destinations</button>
+          <div className={popular ? "popularBorderBottom" : ''}></div>
+        </div>
+        <div className="uniqueBtnWrapper">
+          <button onClick={displayUnique} className={unique ? "uniqueBtn1" : "uniqueBtn2"}>Unique Stays</button>
+          <div className={unique ? "uniqueBorderBottom" : ''}></div>
+        </div>
       </div>
 
       <div className="divider"></div>
