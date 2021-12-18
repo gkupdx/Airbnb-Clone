@@ -7,6 +7,14 @@
 /* Manrope Extra-bold 800 */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 
+/* Nunito Sans Semi-bold 600 */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Nunito+Sans:wght@600&family=Roboto:wght@100&display=swap');
+
+/* TAILWIND CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -28,11 +36,12 @@ body {
 /** HEADER **/
 .header {
   width: 100%;
-  height: 1450px;
+  height: 1500px;
   background: #000;
   margin-bottom: 30px;
 }
 
+/** HEADER BAR **/
 .headerWrapper {
   display: flex;
   justify-content: space-between;
@@ -46,7 +55,7 @@ body {
   align-items: flex-start;
   width: 20%;
   height: auto;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .logoWrap img {
@@ -58,31 +67,82 @@ body {
   cursor: pointer;
 }
 
-.searchWrap {
+.searchBtnWrap {
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: #FFF;
-  width: 30%;
+  width: 28%;
   margin-top: 25px;
+  margin-right: 70px;
 }
 
-.searchWrap p {
-  height: 30px;
-  margin-right: -50px;
-}
-
-.searchWrap a {
-  height: 30px;
+.placesBtn1,
+.expBtn1 {
+  height: 40px;
+  background: inherit;
   color: #FFF;
-  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
-.searchWrap p:hover,
-.searchWrap a:hover {
+.placesBtn2,
+.expBtn2 {
+  height: 40px;
+  background: inherit;
+  color: #FFF;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  border: none;
+  color: #FFF;
+}
+
+.placesBtn2:hover,
+.expBtn2:hover {
   opacity: 0.7;
   cursor: pointer;
-  border-bottom: 1px solid lightgrey;
+}
+
+.placesBtn2::after,
+.expBtn2::after {
+  width: 100%;
+  left: 0;
+}
+
+.placesBtn2:hover::after {
+  content: '';
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 800px;
+  width: 5px;
+  height: 2px;
+  background-color: lightgrey;
+  transition: all ease-in-out .2s;
+}
+
+.expBtn2:hover::after {
+  content: '';
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 935px;
+  width: 5px;
+  height: 2px;
+  background-color: lightgrey;
+  transition: all ease-in-out .2s;
+}
+
+.onlineExpBtn {
+  height: 32px;
+  color: #FFF;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.onlineExpBtn:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .accountWrap {
@@ -91,25 +151,31 @@ body {
   align-items: center;
   color: #FFF;
   width: 15%;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .hostBtn {
   font-size: 14px;
   font-weight: 600;
   width: 130px;
-  padding: 12px;
+  height: 40px;
+  padding: 11px;
   text-align: center;
   margin-right: 5px;
 }
 
 .globeBtn {
-  font-size: 14px;
   width: 40px;
+  height: 40px;
   padding: 10px;
   text-align: center;
   margin-left: -10px;
   margin-right: 5px;
+}
+
+.globeIcon {
+  font-size: 18px;
+  margin-top: 2px;
 }
 
 .hostBtn:hover,
@@ -127,22 +193,300 @@ body {
   border-radius: 30px;
 }
 
-.accountBtn i {
-  padding-left: 5px;
-  padding-right: 5px;
+.menuBarsIcon {
   font-size: 17px;
-  color: grey;
+  color: dimgrey;
+  margin-bottom: 5px;
+}
+
+.userIcon {
+  font-size: 28px;
+  color: dimgrey;
+  margin-top: 5px;
+  margin-left: 12px;
 }
 
 .accountBtn:hover {
   cursor: pointer;
 }
 
+/** SEARCH BARS **/
+.searchBarWrapper {
+  display: flex;
+  width: 100%;
+}
+
+.placesToStay {
+  display: flex;
+  justify-content: space-around;
+  width: 800px;
+  height: 65px;
+  background: #FFF;
+  border-radius: 35px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.location {
+  width: 30%;
+  background: inherit;
+  font-family: 'Nunito Sans', sans-serif;
+  border: none;
+  border-radius: 35px;
+  padding-left: 30px;
+  text-align: left;
+}
+
+.guests {
+  width: 30%;
+  background: inherit;
+  font-family: 'Nunito Sans', sans-serif;
+  border: none;
+  border-radius: 35px;
+  padding-left: 25px;
+  text-align: left;
+}
+
+.checkIn,
+.checkOut {
+  width: 20%;
+  background: inherit;
+  font-family: 'Nunito Sans', sans-serif;
+  border: none;
+  border-radius: 35px;
+  padding-left: 25px;
+  text-align: left;
+}
+
+.location:hover,
+.checkIn:hover,
+.checkOut:hover,
+.guests:hover {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.searchBtn1 {
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 725px;
+  width: 50px;
+  height: 50px;
+  background: #e32750;
+  color: #FFF;
+  border: none;
+  border-radius: 40px;
+  transition: 0.25s ease-in;
+  padding: 15px;
+}
+
+.searchBtn1:hover {
+  background: #aa2a64;
+  cursor: pointer;
+}
+
+.experiencesBar {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  height: 65px;
+  background: #FFF;
+  border-radius: 35px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.location2 {
+  width: 50%;
+  background: inherit;
+  font-family: 'Nunito Sans', sans-serif;
+  border: none;
+  border-radius: 35px;
+  padding-left: 30px;
+  text-align: left;
+}
+
+.date {
+  width: 50%;
+  background: inherit;
+  font-family: 'Nunito Sans', sans-serif;
+  border: none;
+  border-radius: 35px;
+  padding-left: 25px;
+  text-align: left;
+}
+
+.location2:hover,
+.date:hover {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.searchBtn2 {
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 737px;
+  width: 50px;
+  height: 50px;
+  background: #e32750;
+  color: #FFF;
+  border: none;
+  border-radius: 40px;
+  transition: 0.25s ease-in;
+  padding: 15px;
+}
+
+.searchBtn2:hover {
+  background: #aa2a64;
+  cursor: pointer;
+}
+
+/** HERO IMAGE **/
+.heroDiv {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.heroDiv h3 {
+  position: absolute;
+  margin-top: 385px;
+  margin-left: 810px;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #222;
+}
+
+.announcement {
+  position: absolute;
+  margin-top: 455px;
+  margin-left: 685px;
+  background: #FFF;
+  width: 260px;
+  height: 55px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  border: 1px solid #000;
+  border-radius: 30px;
+  color: #222;
+}
+
+.announcement:hover {
+  background: #f3f4f5; /* anti-flash white */
+  cursor: pointer;
+}
+
+.playIcon {
+  font-size: 13px;
+  margin-top: 7px;
+  margin-right: 10px;
+}
+
+.heroImage {
+  width: 85%;
+  height: 750px;
+  object-fit: fill;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.heroDivText {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+}
+
+.heroDivText h2 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #FFF;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.learnMore {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  background: #FFF;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 7px;
+  margin-top: 20px;
+}
+
+.learnMore:hover {
+  background: #f3f4f5;
+  cursor: pointer;
+}
+
+.heroDivTwo {
+  width: inherit;
+  height: inherit;
+}
+
+.heroDivTwo h2 {
+  position: absolute;
+  margin-top: 455px;
+  margin-left: 585px;
+  color: #FFF;
+  font-size: 50px;
+}
+
+.heroDivTwo h3 {
+  position: absolute;
+  margin-top: 565px;
+  margin-left: 910px;
+  z-index: 2;
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  background-image: linear-gradient(to right, #4d0585, #b3277f);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroDivTwo h3:hover {
+  cursor: pointer;
+}
+
+.heroDivTwo button {
+  position: absolute;
+  margin-top: 550px;
+  margin-left: 730px;
+  width: 170px;
+  height: 55px;
+  background: #FFF;
+  border: none;
+  border-radius: 25px;
+}
+
+.heroDivTwo button:hover {
+  background: #FFF;
+  cursor: pointer;
+}
+
+.heroImageTwo {
+  width: 85%;
+  height: 750px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 110px;
+}
+
 /** EXPLORE NEARBY **/
 .nextTrip {
   width: 100%;
   height: auto;
-  margin-top: 500px;
+  margin-top: 480px;
   margin-bottom: 50px;
 }
 
@@ -377,7 +721,7 @@ body {
 
 .experiencesContent button:hover,
 .onlineExperiencesContent button:hover {
-  background: #dcdcdc;
+  background: #f3f4f5;
   cursor: pointer;
 }
 
@@ -427,7 +771,7 @@ body {
 }
 
 .bannerContent button:hover {
-  background: #dcdcdc;
+  background: #f3f4f5;
   cursor: pointer;
 }
 
@@ -456,10 +800,10 @@ body {
 }
 
 .divider {
-  height: 10px;
+  height: 3px;
   width: 85%;
-  border-top: 1px solid lightgrey;
-  margin: auto;
+  border-bottom: 1px solid lightgrey;
+  margin-left: 143px;
 }
 
 .artsBtn1:hover,
@@ -502,159 +846,232 @@ body {
   cursor: pointer;
 }
 
+.artsBtnWrapper {
+  width: 210px;
+  height: 50px;
+  margin-left: -12px;
+}
 .artsBtn1 {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: rgba(0, 0, 0, 1);
-  width: 195px;
-  height: 50px;
+  width: 210px;
+  height: 40px;
   background: inherit;
   border: none;
-  border-bottom: 2px solid #000;
+  border-radius: 10px;
   margin-top: 5px;
   transition-duration: 0.1s;
   transform: scale(0.99);
+}
+.artsBorderBottom {
+  width: 185px;
+  height: 7px;
+  background: #FFF;
+  border-bottom: 2px solid #000;
+  transition-duration: 0.1s;
+  margin: auto;
 }
 .artsBtn2 {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.55);
-  width: 195px;
-  height: 50px;
+  width: 210px;
+  height: 40px;
   background: inherit;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   margin-top: 5px;
 }
 
+.outdoorBtnWrapper {
+  width: 250px;
+  height: 50px;
+}
 .outdoorBtn1 {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: rgba(0, 0, 0, 1);
-  width: 240px;
-  height: 50px;
+  width: 250px;
+  height: 40px;
   background: inherit;
   border: none;
-  border-bottom: 2px solid #000;
+  border-radius: 10px;
   margin-top: 5px;
   transition-duration: 0.1s;
   transform: scale(0.99);
+}
+.outdoorBorderBottom {
+  width: 230px;
+  height: 7px;
+  background: #FFF;
+  border-bottom: 2px solid #000;
+  transition-duration: 0.1s;
+  margin: auto;
 }
 .outdoorBtn2 {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.55);
-  width: 240px;
-  height: 50px;
+  width: 250px;
+  height: 40px;
   background: inherit;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   margin-top: 5px;
 }
 
+.cabinsBtnWrapper {
+  width: 130px;
+  height: 50px;
+}
 .cabinsBtn1 {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: rgba(0, 0, 0, 1);
-  width: 120px;
-  height: 50px;
+  width: 130px;
+  height: 40px;
   background: inherit;
   border: none;
-  border-bottom: 2px solid #000;
+  border-radius: 10px;
   margin-top: 5px;
   transition-duration: 0.1s;
   transform: scale(0.99);
+}
+.cabinsBorderBottom {
+  width: 105px;
+  height: 7px;
+  background: #FFF;
+  border-bottom: 2px solid #000;
+  transition-duration: 0.1s;
+  margin: auto;
 }
 .cabinsBtn2 {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.55);
-  width: 120px;
-  height: 50px;
+  width: 130px;
+  height: 40px;
   background: inherit;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   margin-top: 5px;
 }
 
+.beachBtnWrapper {
+  width: 150px;
+  height: 50px;
+}
 .beachBtn1 {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: rgba(0, 0, 0, 1);
-  width: 135px;
-  height: 50px;
+  width: 150px;
+  height: 40px;
   background: inherit;
   border: none;
-  border-bottom: 2px solid #000;
+  border-radius: 10px;
   margin-top: 5px;
   transition-duration: 0.1s;
   transform: scale(0.99);
+}
+.beachBorderBottom {
+  width: 125px;
+  height: 7px;
+  background: #FFF;
+  border-bottom: 2px solid #000;
+  transition-duration: 0.1s;
+  margin: auto;
 }
 .beachBtn2 {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.55);
-  width: 135px;
-  height: 50px;
+  width: 150px;
+  height: 40px;
   background: inherit;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   margin-top: 5px;
 }
 
+.popularBtnWrapper {
+  width: 160px;
+  height: 50px;
+}
 .popularBtn1 {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: rgba(0, 0, 0, 1);
-  width: 140px;
-  height: 50px;
+  width: 160px;
+  height: 40px;
   background: inherit;
   border: none;
-  border-bottom: 2px solid #000;
+  border-radius: 10px;
   margin-top: 5px;
   transition-duration: 0.1s;
   transform: scale(0.99);
+}
+.popularBorderBottom {
+  width: 135px;
+  height: 7px;
+  background: #FFF;
+  border-bottom: 2px solid #000;
+  transition-duration: 0.1s;
+  margin: auto;
 }
 .popularBtn2 {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.55);
-  width: 140px;
-  height: 50px;
+  width: 160px;
+  height: 40px;
   background: inherit;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   margin-top: 5px;
 }
 
+.uniqueBtnWrapper {
+  width: 110px;
+  height: 50px;
+}
 .uniqueBtn1 {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: rgba(0, 0, 0, 1);
-  width: 95px;
-  height: 50px;
+  width: 110px;
+  height: 40px;
   background: inherit;
   border: none;
-  border-bottom: 2px solid #000;
+  border-radius: 10px;
   margin-top: 5px;
   transition-duration: 0.1s;
   transform: scale(0.99);
+}
+.uniqueBorderBottom {
+  width: 85px;
+  height: 7px;
+  background: #FFF;
+  border-bottom: 2px solid #000;
+  transition-duration: 0.1s;
+  margin: auto;
 }
 .uniqueBtn2 {
   font-family: 'Manrope', sans-serif;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.55);
-  width: 95px;
-  height: 50px;
+  width: 110px;
+  height: 40px;
   background: inherit;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   margin-top: 5px;
 }
 
@@ -954,19 +1371,46 @@ body {
 }
 
 /* SOCIAL */
-.social button {
+.languageBtn {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
   text-decoration: underline;
-  width: 110px;
+  width: 240px;
   height: 50px;
   background: #f4f4f4;
   border: none;
   margin-top: 5px;
 }
 
-.social button:hover {
+.languageBtn:hover {
   cursor: pointer;
+}
+
+.globeIconTwo {
+  width: 50px;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.currencyBtn {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  text-decoration: underline;
+  width: 100px;
+  height: 50px;
+  background: #f4f4f4;
+  border: none;
+  margin-top: 5px;
+}
+
+.currencyBtn:hover {
+  cursor: pointer;
+}
+
+.dollarIcon {
+  font-size: 15px;
+  margin-top: 2px;
+  margin-right: 10px;
 }
 
 .social i {
