@@ -1,18 +1,10 @@
 //// ArtLocation_mobile.js
 
-const ArtLocation = () => {
-  const lightText = {
-    color: "rgba(0, 0, 0, 0.6)"
-  }
-
-  const showMore = {
-    fontWeight: 600,
-    textDecoration: "underline"
-  }
+const ArtLocation = ({ lightText, showMoreStyle, showSeeMore, hiddenStyle, showMoreLocations }) => {
 
   return (
-    <div className="artLocation">
-      <div className="artWrapper">
+    <div className="getawayLocation">
+      <div className="getawayWrapper">
         <button>Phoenix<br/><span style={lightText}>Arizona</span></button>
         <button>Hot Springs<br/><span style={lightText}>Arkansas</span></button>
         <button>Los Angeles<br/><span style={lightText}>California</span></button>
@@ -24,7 +16,40 @@ const ArtLocation = () => {
         <button>Keswick<br/><span style={lightText}>England</span></button>
         <button>London<br/><span style={lightText}>England</span></button>
         <button>Scarborough<br/><span style={lightText}>England</span></button>
-        <button><span style={showMore}>Show more</span></button>
+        {showSeeMore ? <button onClick={showMoreLocations}><span style={showMoreStyle}>Show more</span></button> : <button>Sherwood Forest<br/><span style={lightText}>England</span></button>}
+        <div style={hiddenStyle} className="hiddenLocations">
+          <button>York<br/><span style={lightText}>England</span></button>
+          <button>Paris<br/><span style={lightText}>France</span></button>
+          <button>Rhodes<br/><span style={lightText}>Greece</span></button>
+          <button>Nashville<br/><span style={lightText}>Indiana</span></button>
+          <button>Dublin<br/><span style={lightText}>Ireland</span></button>
+          <button>Florence<br/><span style={lightText}>Italy</span></button>
+          <button>Rome<br/><span style={lightText}>Italy</span></button>
+          <button>Lisbon<br/><span style={lightText}>Lisbon</span></button>
+          <button>Grande Isle<br/><span style={lightText}>Louisiana</span></button>
+          <button>New Orleans<br/><span style={lightText}>Louisiana</span></button>
+          <button>Marthas Vineyard<br/><span style={lightText}>Massachussetts</span></button>
+          <button>South Haven<br/><span style={lightText}>Michigan</span></button>
+          <button>Duluth<br/><span style={lightText}>Minnesota</span></button>
+          <button>Amsterdam<br/><span style={lightText}>Netherlands</span></button>
+          <button>New York<br/><span style={lightText}>New York</span></button>
+          <button>Nice<br/><span style={lightText}>Provence-Alpes-Cote d'Azur</span></button>
+          <button>Inverness<br/><span style={lightText}>Scotland</span></button>
+          <button>Malaga<br/><span style={lightText}>Spain</span></button>
+          <button>Valencia<br/><span style={lightText}>Spain</span></button>
+          <button>Split<br/><span style={lightText}>Split-Dalmatia County</span></button>
+          <button>Nashville<br/><span style={lightText}>Tennessee</span></button>
+          <button>Austin<br/><span style={lightText}>Texas</span></button>
+          <button>Houston<br/><span style={lightText}>Texas</span></button>
+          <button>Darthmouth<br/><span style={lightText}>United Kingdom</span></button>
+          <button>Edinburgh<br/><span style={lightText}>United Kingdom</span></button>
+          <button>Liverpool<br/><span style={lightText}>United Kingdom</span></button>
+          <button>St Ives<br/><span style={lightText}>United Kingdom</span></button>
+          <button>Lake Powell<br/><span style={lightText}>United States</span></button>
+          <button>Lake Anna<br/><span style={lightText}>Virginia</span></button>
+          <button>Leavenworth<br/><span style={lightText}>Washington</span></button>
+          <button>Seattle<br/><span style={lightText}>Washington</span></button>
+        </div>
       </div>
     </div>
   )
