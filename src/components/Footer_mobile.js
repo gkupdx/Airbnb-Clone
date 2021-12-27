@@ -2,9 +2,7 @@
 
 import { FiGlobe } from 'react-icons/fi';
 import { BiDollar } from 'react-icons/bi';
-import { ImFacebook } from 'react-icons/im';
-import { ImTwitter } from 'react-icons/im';
-import { ImInstagram } from 'react-icons/im';
+import { ImFacebook, ImTwitter, ImInstagram } from 'react-icons/im';
 
 const Footer = () => {
 
