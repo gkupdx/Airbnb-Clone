@@ -48,6 +48,7 @@ body {
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1); /* offset-x, offset-y, blur-radius, spread-radius, color */
   text-align: center;
   transition: all 0.2s ease;
+  z-index: 2;
 }
 
 .searchBtn {
@@ -229,6 +230,11 @@ body {
 .clickableBtn {
   cursor: pointer;
   opacity: 1;
+}
+
+.clickableBtn:hover {
+  transform: scale(1.05);
+  transition: 0.4s;
 }
 
 .flexCol {
@@ -436,6 +442,7 @@ body {
 .inspirationWrapper {
   display: flex;
   flex-direction: column;
+  width: inherit;
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -445,11 +452,41 @@ body {
   font-weight: 600;
 }
 
-.inspirationBtns {
+.inspirationBtnRow {
   display: inline-flex;
+  width: inherit;
+  height: inherit;
 }
 
-.inspirationBtns button {
+.visibleLeftNavBtn {
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: #FFF;
+  border: none;
+  box-shadow: 1px 1px 1px 3px #FFF;
+  margin-top: 15px;
+  z-index: 2;
+}
+
+.visibleRightNavBtn {
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: #FFF;
+  border: none;
+  box-shadow: 1px 1px 1px 3px #FFF;
+  z-index: 2;
+}
+
+/*
+.invisibleBtn {
+  display: none;
+} */
+
+.inspirationBtnWrapper button {
   width: auto;
   height: 40px;
   white-space: nowrap;
@@ -464,7 +501,7 @@ body {
   margin-right: 16px;
 }
 
-.inspirationBtns button:hover {
+.inspirationBtnWrapper button:hover {
   cursor: pointer;
   background: #f3f4f5;
 }
@@ -519,25 +556,32 @@ body {
   margin-bottom: 15px;
 }
 
-/** ARTLOCATION (mobile) **/
-.artLocation {
+/** GETAWAY LOCATION (mobile) **/
+.getawayLocation {
   width: 100%;
   height: auto;
   padding-bottom: 50px;
 }
 
-.artWrapper button {
+.getawayWrapper button {
   width: 50%;
   height: 60px;
   background: transparent;
   border: none;
   font-family: 'Manrope', sans-serif;
+  font-size: 14px;
   text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   padding-bottom: 5px;
 }
 
-.artWrapper button:hover {
+.getawayWrapper button:hover {
   cursor: pointer;
+}
+
+.hiddenLocations {
+  display: none;
 }
 
 /** FOOTER (mobile) **/
@@ -628,6 +672,53 @@ body {
 .copyrightLinks a:hover {
   text-decoration: underline;
   opacity: 0.8;
+}
+
+/** FOOTER BAR (mobile) **/
+.footerBarSticky {
+  position: sticky;
+  width: 100%;
+  height: 65px;
+  background: #FFF;
+  border-top: 1px solid lightgrey;
+  z-index: 2;
+}
+
+.footerBarBtns {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.activeFooterLink {
+  height: 45px;
+  align-items: center;
+  border: none;
+  background: inherit;
+  font-family: 'Manrope', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+
+.activeFooterLink:hover {
+  cursor: pointer;
+}
+
+.inactiveFooterLink {
+  height: 45px;
+  align-items: center;
+  border: none;
+  background: inherit;
+  font-family: 'Manrope', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #000;
+  opacity: 0.4;
+  text-decoration: none;
 }
 
 /** TABLET @media **/
@@ -963,52 +1054,4 @@ body {
     text-decoration: underline;
     opacity: 0.8;
   }
-}
-
-
-
-
-/** FOOTER BAR (mobile) **/
-.footerBar {
-  width: 100%;
-  height: 65px;
-  background: #FFF;
-  border-top: 1px solid lightgrey;
-}
-
-.footerBarBtns {
-  display: flex;
-  justify-content: space-around;
-  width: 60%;
-  margin: auto;
-  margin-top: 10px;
-}
-
-.activeFooterLink {
-  height: 45px;
-  align-items: center;
-  border: none;
-  background: inherit;
-  font-family: 'Manrope', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  color: #000;
-  text-decoration: none;
-}
-
-.activeFooterLink:hover {
-  cursor: pointer;
-}
-
-.inactiveFooterLink {
-  height: 45px;
-  align-items: center;
-  border: none;
-  background: inherit;
-  font-family: 'Manrope', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  color: #000;
-  opacity: 0.4;
-  text-decoration: none;
 }
