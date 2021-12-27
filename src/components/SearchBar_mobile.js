@@ -1,7 +1,6 @@
 //// SearchBar_mobile.js
 
 import { useState, useEffect } from 'react';
-import logo from './airbnb_logo_v2.jpg';
 import { BiSearch } from 'react-icons/bi';
 
 import TabletBar from './TabletBar';
@@ -19,7 +18,7 @@ const SearchBar = () => {
 
   // Transition from fixed to "sticky" search bar on window scroll
   const stickySearchBar = () => {
-    if (window.scrollY < 1) {
+    if (window.pageYOffset === 0) {
       setSticky(false);
     } else {
       setSticky(true);
