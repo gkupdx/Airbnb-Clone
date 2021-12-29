@@ -50,13 +50,19 @@ const FooterBar = ({ style }) => {
   }
 
   return (
-    <div style={style} className="footerBarSticky">
-      <div className="footerBarBtns">
-        {explore ? <a onClick={toggleExplore} className="flexCol activeFooterLink" href="#explore"><BiSearch style={activeIconStyle}/>Explore</a> : <a onClick={toggleExplore} className="flexCol inactiveFooterLink" href="#explore"><BiSearch style={inactiveIconStyle}/>Explore</a>}
-        {wishlist ? <a onClick={toggleWishlist} className="flexCol activeFooterLink" href="#wishlist"><BiHeart style={activeIconStyle}/>Wishlists</a> : <a onClick={toggleWishlist} className="flexCol inactiveFooterLink" href="#wishlist"><BiHeart style={inactiveIconStyle}/>Wishlists</a>}
-        {login ? <a onClick={toggleLogin} className="flexCol activeFooterLink" href="#login"><FaUserCircle style={activeIconStyle}/>Log in</a> : <a onClick={toggleLogin} className="flexCol inactiveFooterLink" href="#login"><FaUserCircle style={inactiveIconStyle}/>Log in</a>}
+    <>
+    {window.innerWidth < 800 ?
+      <div style={style} className="footerBarSticky">
+        <div className="footerBarBtns">
+          {explore ? <a onClick={toggleExplore} className="footerFlexCol activeFooterLink" href="#explore"><BiSearch style={activeIconStyle}/>Explore</a> : <a onClick={toggleExplore} className="footerFlexCol inactiveFooterLink" href="#explore"><BiSearch style={inactiveIconStyle}/>Explore</a>}
+          {wishlist ? <a onClick={toggleWishlist} className="footerFlexCol activeFooterLink" href="#wishlist"><BiHeart style={activeIconStyle}/>Wishlists</a> : <a onClick={toggleWishlist} className="footerFlexCol inactiveFooterLink" href="#wishlist"><BiHeart style={inactiveIconStyle}/>Wishlists</a>}
+          {login ? <a onClick={toggleLogin} className="footerFlexCol activeFooterLink" href="#login"><FaUserCircle style={activeIconStyle}/>Log in</a> : <a onClick={toggleLogin} className="footerFlexCol inactiveFooterLink" href="#login"><FaUserCircle style={inactiveIconStyle}/>Log in</a>}
+        </div>
       </div>
-    </div>
+      :
+      ""
+    }
+    </>
   )
 }
 
