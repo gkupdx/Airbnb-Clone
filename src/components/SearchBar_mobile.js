@@ -32,7 +32,7 @@ const SearchBar = () => {
 
   // Transition from MOBILE to TABLET search bar on window resize (dynamic)
   const tabletSearchBar = () => {
-    if (window.innerWidth >= 800) {
+    if (window.innerWidth >= 900) {
       setTabletView(true);
     } else {
       setTabletView(false);
@@ -46,13 +46,13 @@ const SearchBar = () => {
 
   return (
     <>
-    {window.innerWidth < 800 ?
-      // browser width LESS than 800px ---> display MOBILE search bar
+    {!tabletView ?
+      // browser width LESS than 900px ---> display MOBILE search bar
       <div className={!sticky ? "fixedSearchBar" : "stickySearchBar"}>
         <button className={!sticky ? "searchBtn" : "searchBtn2"}><BiSearch style={searchIconStyle}/>Where are you going?</button>
       </div>
       :
-      // browser width GREATER/EQUAL to 800px ---> display TABLET search bar
+      // browser width GREATER/EQUAL to 900px ---> display TABLET search bar
       <div className={!sticky ? "fixedSearchBar" : "stickySearchBar"}>
         {!sticky ? <TabletBar /> : <TabletBarSticky />}
       </div>

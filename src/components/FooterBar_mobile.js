@@ -51,7 +51,8 @@ const FooterBar = ({ style }) => {
 
   return (
     <>
-    {window.innerWidth < 800 ?
+    {/* shows only if browser width is mobile view */}
+    {window.innerWidth < 900 ?
       <div style={style} className="footerBarSticky">
         <div className="footerBarBtns">
           {explore ? <a onClick={toggleExplore} className="footerFlexCol activeFooterLink" href="#explore"><BiSearch style={activeIconStyle}/>Explore</a> : <a onClick={toggleExplore} className="footerFlexCol inactiveFooterLink" href="#explore"><BiSearch style={inactiveIconStyle}/>Explore</a>}
