@@ -11,7 +11,7 @@ const NextTrip = () => {
   const [updateStyle, setUpdateStyle] = useState({
     transform: `translateX(${position}px)`,
     transition: `0.4s ease`
-  })
+  });
 
   const chevronIconStyle = {
     fontSize: "18px"
@@ -24,25 +24,25 @@ const NextTrip = () => {
 
     // DIRECTION - LEFT
     if (direction === 'left') {
-      if (position === 0 || position === -250) { // check to see if in default position or near default position
+      if (position === 0 || position === -240) { // check to see if in default position or near default position
         updatePos = 0;
         setLeftButton(false);
-      } else if (position <= -600) { // we are near the end of carousel, shift only by 100
+      } else if (position <= -500) { // we are near the end of carousel, shift only by 100
         updatePos += 100;
         setRightButton(true);
       } else {
-        updatePos += 250;
+        updatePos += 240;
         setLeftButton(true);
         setRightButton(true);
       }
     } else { // DIRECTION - RIGHT
-      if (position < -500) { // we are AT THE END so DO NOT SHIFT RIGHT
+      if (position < -480) { // we are AT THE END so DO NOT SHIFT RIGHT
         updatePos -= 0;
-      } else if (position <= -500) { // check to see if we are shifting from near the end of carousel
+      } else if (position <= -480) { // check to see if we are shifting from near the end of carousel
         updatePos -= 100;
         setRightButton(false);
       } else {
-        updatePos -= 250;
+        updatePos -= 240;
         setLeftButton(true);
         setRightButton(true);
       }
@@ -58,7 +58,6 @@ const NextTrip = () => {
     });
   }
 
-
   return (
     <div className="nextTrip">
       <div className="flexRow">
@@ -69,38 +68,11 @@ const NextTrip = () => {
         </div>
       </div>
 
-      <div style={updateStyle} className="flexRow">
-        <div className="flexCol">
-          <img src="https://a0.muscache.com/im/pictures/e68a0a87-e41a-489e-a03e-e11236d9b679.jpg?im_w=320" alt="Portland"/>
-          <div className="portland">
-            <h3>Portland</h3>
-            <p>1 hour drive</p>
-          </div>
-        </div>
-
-        <div className="flexCol">
-          <img src="https://a0.muscache.com/im/pictures/7ab01178-6b05-4f14-8fcf-b989acb7a52c.jpg?im_w=320" alt="Seattle"/>
-          <div className="seattle">
-            <h3>Seattle</h3>
-            <p>4.5 hour drive</p>
-          </div>
-        </div>
-
-        <div className="flexCol">
-          <img src="https://a0.muscache.com/im/pictures/aef20929-0d6a-40e7-8ac9-321ff0edf8c9.jpg?im_w=320" alt="Bend"/>
-          <div className="bend">
-            <h3>Bend</h3>
-            <p>4.5 hour drive</p>
-          </div>
-        </div>
-
-        <div className="flexCol">
-          <img src="https://a0.muscache.com/im/pictures/b4e025ab-b353-41fb-814d-5e4f80571186.jpg?im_w=320" alt="Eugene"/>
-          <div className="eugene">
-            <h3>Eugene</h3>
-            <p>3 hour drive</p>
-          </div>
-        </div>
+      <div style={updateStyle} className="flexRowCards">
+        <div className="mtHoodCard"></div>
+        <div className="sunriverCard"></div>
+        <div className="leavenworthCard"></div>
+        <div className="lincolnCityCard"></div>
       </div>
     </div>
   )
