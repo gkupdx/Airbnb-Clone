@@ -78,7 +78,7 @@ const Footer = () => {
           <a className="social" href="#facebook"><ImFacebook style={socialIconStyle}/></a>
           <a className="social" href="#twitter"><ImTwitter style={socialIconStyle}/></a>
           <a className="social" href="#instagram"><ImInstagram style={socialIconStyle}/></a>
-          <p>&copy; 2021 Airbnb, Inc.</p>
+          <p>&copy; 2022 Airbnb, Inc.</p>
           <p className="copyrightLinks">
             <a href="link">Privacy</a>&#183;
             <a href="link">Terms</a>&#183;
