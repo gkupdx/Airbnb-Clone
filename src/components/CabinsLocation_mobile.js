@@ -16,7 +16,7 @@ const CabinsLocation = ({ lightText, showMoreStyle, showSeeMore, hiddenStyle, sh
         <button>Blowing Rock<br/><span style={lightText}>North Carolina</span></button>
         <button>Boone<br/><span style={lightText}>North Carolina</span></button>
         <button>Hochatown<br/><span style={lightText}>Oklahoma</span></button>
-        {showSeeMore ? <button onClick={showMoreLocations}><span style={showMoreStyle}>Show more</span></button> : <button>Pigeon Forge<br/><span style={lightText}>Tennessee</span></button>}
+        {showSeeMore ? <button onClick={showMoreLocations} style={showMoreStyle}>Show more</button> : <button>Pigeon Forge<br/><span style={lightText}>Tennessee</span></button>}
         <div style={hiddenStyle} className="hiddenLocations">
           <button>Townsend<br/><span style={lightText}>Tennessee</span></button>
           <button>Wears Valley<br/><span style={lightText}>Tennessee</span></button>

@@ -16,7 +16,7 @@ const ArtLocation = ({ lightText, showMoreStyle, showSeeMore, hiddenStyle, showM
         <button>Keswick<br/><span style={lightText}>England</span></button>
         <button>London<br/><span style={lightText}>England</span></button>
         <button>Scarborough<br/><span style={lightText}>England</span></button>
-        {showSeeMore ? <button onClick={showMoreLocations}><span style={showMoreStyle}>Show more</span></button> : <button>Sherwood Forest<br/><span style={lightText}>England</span></button>}
+        {showSeeMore ? <button onClick={showMoreLocations} style={showMoreStyle}>Show more</button> : <button>Sherwood Forest<br/><span style={lightText}>England</span></button>}
         <div style={hiddenStyle} className="hiddenLocations">
           <button>York<br/><span style={lightText}>England</span></button>
           <button>Paris<br/><span style={lightText}>France</span></button>

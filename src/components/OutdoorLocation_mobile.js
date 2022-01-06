@@ -16,7 +16,7 @@ const OutdoorLocation = ({ lightText, showMoreStyle, showSeeMore, hiddenStyle, s
         <button>Pinetop-Lakeside<br/><span style={lightText}>Arizona</span></button>
         <button>Red Rock<br/><span style={lightText}>Arizona</span></button>
         <button>Dinner Plain<br/><span style={lightText}>Australia</span></button>
-        {showSeeMore ? <button onClick={showMoreLocations}><span style={showMoreStyle}>Show more</span></button> : <button>Streaky Bay<br/><span style={lightText}>Australia</span></button>}
+        {showSeeMore ? <button onClick={showMoreLocations} style={showMoreStyle}>Show more</button> : <button>Streaky Bay<br/><span style={lightText}>Australia</span></button>}
         <div style={hiddenStyle} className="hiddenLocations">
           <button>Emerald Lake<br/><span style={lightText}>British Columbia</span></button>
           <button>Vancouver Island<br/><span style={lightText}>British Columbia</span></button>

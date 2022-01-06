@@ -16,7 +16,7 @@ const PopularLocation = ({ lightText, showMoreStyle, showSeeMore, hiddenStyle, s
         <button>Mountain View<br/><span style={lightText}>Arkansas</span></button>
         <button>Devonport<br/><span style={lightText}>Australia</span></button>
         <button>Mallacoota<br/><span style={lightText}>Australia</span></button>
-        {showSeeMore ? <button onClick={showMoreLocations}><span style={showMoreStyle}>Show more</span></button> : <button>Ibiza<br/><span style={lightText}>Balearic Islands</span></button>}
+        {showSeeMore ? <button onClick={showMoreLocations} style={showMoreStyle}>Show more</button> : <button>Ibiza<br/><span style={lightText}>Balearic Islands</span></button>}
         <div style={hiddenStyle} className="hiddenLocations">
           <button>Anaheim<br/><span style={lightText}>California</span></button>
           <button>Monterey<br/><span style={lightText}>California</span></button>

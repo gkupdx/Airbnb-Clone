@@ -16,7 +16,7 @@ const BeachLocation = ({ lightText, showMoreStyle, showSeeMore, hiddenStyle, sho
         <button>Melbourne Beach<br/><span style={lightText}>Australia</span></button>
         <button>Moonta Bay<br/><span style={lightText}>Australia</span></button>
         <button>Ocean Grove<br/><span style={lightText}>Australia</span></button>
-        {showSeeMore ? <button onClick={showMoreLocations}><span style={showMoreStyle}>Show more</span></button> : <button>Majorca<br/><span style={lightText}>Balearic Islands</span></button>}
+        {showSeeMore ? <button onClick={showMoreLocations} style={showMoreStyle}>Show more</button> : <button>Majorca<br/><span style={lightText}>Balearic Islands</span></button>}
         <div style={hiddenStyle} className="hiddenLocations">
           <button>Big Sur<br/><span style={lightText}>California</span></button>
           <button>Bodega Bay<br/><span style={lightText}>California</span></button>
