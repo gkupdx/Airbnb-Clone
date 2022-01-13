@@ -1,13 +1,16 @@
 //// TabletBar.js - for the "fixed" version of the tablet view search bar
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FiGlobe } from 'react-icons/fi';
 import { MdMenu } from 'react-icons/md';
 import { FaUserCircle, FaSearch } from 'react-icons/fa';
 
-import logo from './airbnb_logo_white2.png';
+import whiteLogo from './airbnb_logo_white.png';
+import whiteTextLogo from './airbnb_logo_whiteText.PNG';
 
 const TabletBar = () => {
+  const [logo, setLogo] = useState(whiteLogo);
+  const [viewport, setViewport] = useState(true);
   const [places, setPlaces] = useState(true);
   const [exp, setExp] = useState(false);
 
@@ -36,13 +39,6 @@ const TabletBar = () => {
     paddingTop: "10px"
   }
 
-  const airbnbLogoStyle = {
-    color: "#FFF",
-    width: "100px",
-    height: "55px",
-    marginTop: "10px"
-  }
-
   const searchIconStyle = {
     color: "#FFF",
     fontSize: "15px"
@@ -64,6 +60,30 @@ const TabletBar = () => {
     opacity: "0.6"
   }
 
+  const logoStyle = {
+    marginTop: "5px",
+    marginLeft: "30px"
+  }
+
+  const logoTextStyle = {
+    marginLeft: "10px"
+  }
+
+  // Render different Airbnb logos depending on browser width
+  const handleResize = () => {
+    if (window.innerWidth < 1100) {
+      setLogo(whiteLogo);
+      setViewport(false);
+    } else {
+      setLogo(whiteTextLogo);
+      setViewport(true);
+    }
+  }
+
+  useEffect(() => {
+    handleResize()
+    window.addEventListener("resize", handleResize);
+  });
 
   // Hide dividers on mouse enter
   const hideOnMouseEnter = (button) => {
@@ -166,11 +186,11 @@ const TabletBar = () => {
     }
   }
 
-
   return (
     <>
       <div className="tabletFlexRow">
-        <img style={airbnbLogoStyle} src={logo} alt="Airbnb logo"/>
+        {!viewport ? <img style={logoStyle} src={logo} alt="Airbnb logo"/> : <img style={logoTextStyle} src={logo} alt="Airbnb logo"/>}
+
         <div className="optionsFlexRow">
           <button autoFocus onClick={() => showCorrectBar('places')}>Places to stay</button>
           <button onClick={() => showCorrectBar('exp')}>Experiences</button>
