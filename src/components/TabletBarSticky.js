@@ -1,22 +1,21 @@
 //// TabletBarSticky.js - sticky version of the tablet view search bar
 
-import logo from './airbnb_logo_noText2.png';
+import { useState, useEffect } from 'react';
 import { FiGlobe } from 'react-icons/fi';
 import { MdMenu } from 'react-icons/md';
 import { FaUserCircle, FaSearch } from 'react-icons/fa';
 
+import redLogo from './airbnb_logo_red.png';
+import redTextLogo from './airbnb_logo_redText.PNG';
+
 const TabletBarSticky = () => {
+  const [logo, setLogo] = useState(redLogo);
+  const [viewport, setViewport] = useState(true);
+
   const hostLinkStyle = {
     color: "#333",
     fontWeight: "600",
     paddingTop: "10px"
-  }
-
-  const airbnbLogoStyle = {
-    color: "#e32750",
-    width: "35px",
-    height: "40px",
-    marginLeft: "32px"
   }
 
   const searchIconStyle = {
@@ -35,9 +34,34 @@ const TabletBarSticky = () => {
     fontSize: "18px"
   }
 
+  const logoStyle = {
+    marginLeft: "25px"
+  }
+
+  const logoTextStyle = {
+    marginLeft: "15px"
+  }
+
+  // Render different Airbnb logos depending on browser width
+  const handleResize = () => {
+    if (window.innerWidth < 1100) {
+      setLogo(redLogo);
+      setViewport(false);
+    } else {
+      setLogo(redTextLogo);
+      setViewport(true);
+    }
+  }
+
+  useEffect(() => {
+    handleResize()
+    window.addEventListener("resize", handleResize);
+  });
+
   return (
     <div className="tabletFlexRow">
-      <img style={airbnbLogoStyle} src={logo} alt="Airbnb logo"/>
+      {!viewport ? <img style={logoStyle} src={logo} alt="Airbnb logo"/> : <img style={logoTextStyle} src={logo} alt="Airbnb logo"/>}
+
       <button className="searchFlexRow startYourSearch">
         <p>Start your search</p>
         <button className="searchIconBtn1"><FaSearch style={searchIconStyle}/></button>
