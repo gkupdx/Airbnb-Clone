@@ -1,6 +1,7 @@
 //// Discover_mobile.js
 
 const Discover = () => {
+
   return (
     <div className="discover">
       <h2>Discover Airbnb Experiences</h2>
