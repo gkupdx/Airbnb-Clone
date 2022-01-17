@@ -17,7 +17,10 @@ import Inspiration from './components/Inspiration_mobile';
 import Footer from './components/Footer_mobile';
 import FooterBar from './components/FooterBar_mobile';
 
+import SearchMode from './components/SearchMode';
+
 function App() {
+  const [componentState, setComponentState] = useState(false);
 
   // footer bar CSS transition into visible
   const scrollUpStyle = {
@@ -50,39 +53,57 @@ function App() {
     window.addEventListener("scroll", visibleFooterBar)
   });
 
-  // Function to refresh page to top at tablet width breakpoint
-  const forceRefresh = () => {
-    if (window.innerWidth === 900) {
-      window.scrollTo(0, 0);
+  // Hard refresh page at tablet width breakpoint
+  // [set upper range to 855 to account for cases where browser width skips 850px on resize]
+  const hardRefresh = () => {
+    if (window.innerWidth >= 850 && window.innerWidth < 855) {
+      window.location.reload();
     }
   }
 
   useEffect(() => {
-    forceRefresh()
-    window.addEventListener("resize", forceRefresh)
+    hardRefresh()
+    window.addEventListener('resize', hardRefresh);
   });
 
+  // "I'm flexible" button functionality [hero image]
+  const openComponent = () => {
+    setComponentState(true);
+  }
+
+  const closeComponent = () => {
+    setComponentState(false);
+  }
+
+  // Set <body> overflow-x: HIDDEN [mobile & desktop], VISIBLE [tablet]
+  let body = document.body;
+  if (window.innerWidth < 455 || window.innerWidth > 850) {
+    body.style.overflowX = "hidden"
+  } else {
+    body.style.overflowX = "visible"
+  }
+
   return (
-    <div className="container">
-      {/*<Header />
-      <NextTrip />
-      <GiftCards />
-      <Discover />
-      <Hosting />
-      <Inspiration />
-      <Footer />*/}
-      <SearchBar />
-      <Header />
-      <NextTrip />
-      <Discover />
-      <Hosting />
-      <Inspiration />
-      <Footer />
-      {/* check to see if pageYOffset (px) is near bottom of page */}
-      {/* if YES, hide footer bar */}
-      {/* if NO, determine if we're scrolling up or down */}
-      {window.pageYOffset <= 4000 ? visible ? <FooterBar style={scrollUpStyle}/> : <FooterBar style={scrollDownStyle}/> : ""}
-    </div>
+    <>
+    {!componentState ?
+      <div className="container">
+        <SearchBar />
+        <Header onClick={openComponent}/>
+        <NextTrip />
+        <Discover />
+        <Hosting />
+        <Inspiration />
+        <Footer />
+        {/* check to see if pageYOffset (px) is near bottom of page */}
+        {/* if YES, hide footer bar */}
+        {/* if NO, determine if we're scrolling up or down */}
+        {window.pageYOffset <= 4000 ? visible ? <FooterBar style={scrollUpStyle}/> : <FooterBar style={scrollDownStyle}/> : ""}
+      </div>
+      :
+      <div className="container">
+        <SearchMode onClick={closeComponent}/>
+      </div>}
+    </>
   );
 }
 
