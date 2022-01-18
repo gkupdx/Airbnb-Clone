@@ -1,6 +1,6 @@
 //// Inspiration_mobile.js
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 import ArtLocation from './ArtLocation_mobile';
 import OutdoorLocation from './OutdoorLocation_mobile';
@@ -10,6 +10,13 @@ import PopularLocation from './PopularLocation_mobile';
 import UniqueLocation from './UniqueLocation_mobile';
 
 const Inspiration = () => {
+  const artBtn = useRef();
+  const outdoorBtn = useRef();
+  const cabinsBtn = useRef();
+  const beachBtn = useRef();
+  const popularBtn = useRef();
+  const uniqueBtn = useRef();
+
   const [showSeeMore, setShowSeeMore] = useState(true); // toggle state for showing/hiding 'See more' button
   const [hiddenStyle, setHiddenStyle] = useState({ // CSS toggle for showing/hiding additional locations
     display: "none"
@@ -38,6 +45,8 @@ const Inspiration = () => {
   // Passed-in prop to _Location.js components
   // to stylize the 'Show more' button
   const showMoreStyle = {
+    display: "inline-flex",
+    verticalAlign: "middle",
     fontWeight: 600,
     textDecoration: "underline"
   }
@@ -138,33 +147,68 @@ const Inspiration = () => {
     }
   }
 
-  // Inspiration nav button functionality (MOBILE VIEW)
+  // Inspiration nav button functionality
   const shiftButtons = (direction) => {
+    // Full width of inspirationBtnRow <div>
+    // let btnRowWidth = artBtn.current.offsetWidth + outdoorBtn.current.offsetWidth + artBtn.current.offsetWidth + cabinsBtn.current.offsetWidth + popularBtn.current.offsetWidth + uniqueBtn.current.offsetWidth;
+
     let updatePos = position;
 
-    // DIRECTION - LEFT
+    // LEFT - MIN BROWSER WIDTH
     if (direction === 'left') {
       updatePos += 50;
       setLeftButton(true);
       setRightButton(true);
-    } else { // DIRECTION - RIGHT
+
+      // shift <div> to updated position
+      setPosition(updatePos);
+
+      // AFTER SHIFT, check to see if we're near the beginning
+      // if yes, hide left button
+      if (updatePos + 50 === 0 || updatePos + 50 > 0) {
+        setLeftButton(false);
+      }
+
+    } else if (direction === 'right') { // RIGHT - MIN BROWSER WIDTH
+      updatePos -= 50;
+      setRightButton(true);
+
+      setPosition(updatePos);
+
+      // AFTER SHIFT, check to see if we're near the end
+      // if yes, hide right button
+      if (updatePos - 50 <= -650) {
+        setRightButton(false);
+      }
+
+      if (updatePos + 50 < 0) {
+        setLeftButton(true);
+      }
+    } else if (direction === 'leftTablet') { // LEFT - TABLET
+      updatePos += 50;
+      setLeftButton(true);
+      setRightButton(true);
+      setPosition(updatePos);
+
+      if (updatePos + 50 === 0) {
+        setLeftButton(false);
+      }
+    } else if (direction === 'rightTablet') { // RIGHT - TABLET
       updatePos -= 50;
       setLeftButton(true);
       setRightButton(true);
-    }
+      setPosition(updatePos);
 
-    // shift <div> to updated position
-    setPosition(updatePos);
+      if (updatePos - 50 === -250) {
+        setRightButton(false);
+      }
+    } else if (direction === 'rightDesktop') { // ONLY RIGHT - DESKTOP
+      updatePos -= 50;
+      setPosition(updatePos);
 
-    // AFTER SHIFT, check to see if we're near the beginning
-    // if yes, hide left button
-    if (updatePos + 50 === 0) {
-      setLeftButton(false);
-    }
-    // AFTER SHIFT, check to see if we're near the end
-    // if yes, hide right button
-    if (updatePos - 50 === -650) {
-      setRightButton(false);
+      if (updatePos - 50 === -100) {
+        setRightButton(false);
+      }
     }
 
     // apply the new style (<div>)
@@ -173,13 +217,27 @@ const Inspiration = () => {
     });
   }
 
+
   return (
     <div className="inspiration">
-      {/* Inspiration left & right nav buttons */ }
-      <div className="navWrapper">
-        <button onClick={() => shiftButtons('left')} className={leftButton ? "showLeftNavBtn" : "hiddenNavBtn"}><BiChevronLeft style={chevronIconStyle}/></button>
-        <button onClick={() => shiftButtons('right')} className={rightButton ? "showRightNavBtn" : "hiddenNavBtn"}><BiChevronRight style={chevronIconStyle}/></button>
-      </div>
+      {/* Left & right caret buttons (mobile) - outerWidth more accurate for MOBILE */ }
+      {window.innerWidth < 900 ?
+        <div className="navWrapper">
+          <button onClick={() => shiftButtons('left')} className={leftButton ? "showLeftNavBtn" : "hiddenNavBtn"}><BiChevronLeft style={chevronIconStyle}/></button>
+          <button onClick={() => shiftButtons('right')} className={rightButton ? "showRightNavBtn" : "hiddenNavBtn"}><BiChevronRight style={chevronIconStyle}/></button>
+        </div>
+        :
+        // Right caret button (tablet)
+        window.innerWidth >= 900 && window.innerWidth < 1100 ?
+          <div className="navWrapper">
+            <button onClick={() => shiftButtons('leftTablet')} className={leftButton ? "showLeftNavBtn" : "hiddenNavBtn"}><BiChevronLeft style={chevronIconStyle}/></button>
+            <button onClick={() => shiftButtons('rightTablet')} className={rightButton ? "showRightNavBtn" : "hiddenNavBtn"}><BiChevronRight style={chevronIconStyle}/></button>
+          </div>
+          :
+          // Right caret button (desktop)
+          <div className="navWrapper">
+            <button onClick={() => shiftButtons('rightDesktop')} className={rightButton ? "showRightNavBtn" : "hiddenNavBtn"}><BiChevronRight style={chevronIconStyle}/></button>
+          </div>}
 
       <div className="inspirationWrapper">
         <h2>Inspiration for future getaways</h2>
@@ -188,27 +246,27 @@ const Inspiration = () => {
         <div style={updateStyle} className="inspirationBtnRow">
           <div className="inspirationBtnWrapper">
             <button onClick={() => displayPanel('art')} className={art ? "activeBtn" : "inactiveBtn"}>Destinations for arts & culture</button>
-            <div className={art ? "artBorderBottom" : ""}></div>
+            <div ref={artBtn} className={art ? "artBorderBottom" : ""}></div>
           </div>
           <div className="inspirationBtnWrapper">
             <button onClick={() => displayPanel('outdoor')} className={outdoor ? "activeBtn" : "inactiveBtn"}>Destinations for outdoor adventure</button>
-            <div className={outdoor ? "outdoorBorderBottom" : ""}></div>
+            <div ref={outdoorBtn} className={outdoor ? "outdoorBorderBottom" : ""}></div>
           </div>
           <div className="inspirationBtnWrapper">
             <button onClick={() => displayPanel('cabins')} className={cabins ? "activeBtn" : "inactiveBtn"}>Mountain cabins</button>
-            <div className={cabins ? "cabinsBorderBottom" : ""}></div>
+            <div ref={cabinsBtn} className={cabins ? "cabinsBorderBottom" : ""}></div>
           </div>
           <div className="inspirationBtnWrapper">
             <button onClick={() => displayPanel('beach')} className={beach ? "activeBtn" : "inactiveBtn"}>Beach destinations</button>
-            <div className={beach ? "beachBorderBottom" : ""}></div>
+            <div ref={beachBtn} className={beach ? "beachBorderBottom" : ""}></div>
           </div>
           <div className="inspirationBtnWrapper">
             <button onClick={() => displayPanel('popular')} className={popular ? "activeBtn" : "inactiveBtn"}>Popular destinations</button>
-            <div className={popular ? "popularBorderBottom" : ""}></div>
+            <div ref={popularBtn} className={popular ? "popularBorderBottom" : ""}></div>
           </div>
           <div className="inspirationBtnWrapper">
             <button onClick={() => displayPanel('unique')} className={unique ? "activeBtn" : "inactiveBtn"}>Unique Stays</button>
-            <div className={unique ? "uniqueBorderBottom" : ""}></div>
+            <div ref={uniqueBtn} className={unique ? "uniqueBorderBottom" : ""}></div>
           </div>
         </div>
         <div className="divideY2"></div>
