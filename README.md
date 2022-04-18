@@ -2,11 +2,15 @@
 
 I do not claim ownership of any image and PNG assets used in this project.
 
-All image and PNG assets included in this project are owned by Airbnb, Inc.
+* Image assets used in the 'Inspiration for your next trip' and 'Discover Airbnb Experiences' section are owned by Airbnb, Inc.
+* All Airbnb logo assets are owned by Airbnb, Inc.
+* Hero image photo credit to: https://unsplash.com/@benshares
+* Gift card background photo asset credit to: https://unsplash.com/@anniespratt
+* Hosting background photo asset found at https://unsplash.com
 
 I do not claim ownership of any icons used in this project.
 
-All icons used in this project were provided by the React Icons library (https://react-icons.github.io/react-icons/).
+All icons used in this project were provided by the React Icons library: https://react-icons.github.io/react-icons/
 
 **This project was built for _purely educational, non-profit purposes_.**
 
